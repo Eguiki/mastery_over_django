@@ -28,6 +28,7 @@ urlpatterns = [
 
     path('masteries', views.masteries, name='masteries'),
 
-    path('insert_mastery', views.insert_mastery, name='insert_masteries')
+    path('insert_mastery', views.insert_mastery, name='insert_masteries'),
 
+    path('<int:mastery_id>', views.mastery, name='mastery'),
 ]

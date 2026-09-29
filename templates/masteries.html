@@ -6,7 +6,7 @@
 </head>
 <body>
 {% for mastery in masteries %}
-<h3>{{ mastery.mastery_name }}</h3>
+<a href="{% url 'mastery' mastery.id %}">{{ mastery.mastery_name }}</a>
 <p>{{ mastery.mastery_description }}</p><br>
 {% endfor %}
 

@@ -1,6 +1,6 @@
 from mastery_over_django.models import Mastery
 from django.http import HttpResponse, request, HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, aget_object_or_404, get_object_or_404
 
 from mastery_over_django import forms
 
@@ -24,3 +24,8 @@ def insert_mastery(request):
             return redirect('masteries')
     context = {'form': forms.MasteryForm}
     return render(request, 'insert_mastery.html',context)
+
+def mastery(request, mastery_id):
+    mastery = get_object_or_404(Mastery, pk=mastery_id)
+    context = {'mastery': mastery}
+    return render(request, 'mastery.html', context)
