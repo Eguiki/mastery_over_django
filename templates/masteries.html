@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html'%}
+
+{% block content %}
 {% for mastery in masteries %}
 <a href="{% url 'mastery' mastery.id %}">{{ mastery.mastery_name }}</a>
 <p>{{ mastery.mastery_description }}</p><br>
 {% endfor %}
-
-
-</body>
-</html>
+<br>
+<a href="{% url 'insert_masteries' %}">Insert new mastery</a>
+{% endblock %}

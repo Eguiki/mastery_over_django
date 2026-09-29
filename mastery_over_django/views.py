@@ -29,3 +29,21 @@ def mastery(request, mastery_id):
     mastery = get_object_or_404(Mastery, pk=mastery_id)
     context = {'mastery': mastery}
     return render(request, 'mastery.html', context)
+
+
+def edit_mastery(request,mastery_id):
+    mastery = get_object_or_404(Mastery, pk=mastery_id)
+    form = forms.MasteryForm(instance=mastery)
+    if request.method == 'POST':
+        form = forms.MasteryForm(request.POST, instance=mastery)
+        if form.is_valid():
+            form.save()
+            return redirect('masteries')
+        return render(request, 'masteries.html')
+    context = {'form': form, 'id':mastery_id}
+    return render(request, 'edit_mastery.html', context)
+
+def delete_mastery(request, mastery_id):
+    mastery = get_object_or_404(Mastery, pk=mastery_id)
+    mastery.delete()
+    return redirect('masteries')

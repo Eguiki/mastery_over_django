@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{{ mastery.mastery_name }}
-</body>
-</html>
+{% extends 'base.html'%}
+
+{% block content %}
+{{ mastery.mastery_name }} <br>
+{{ mastery.mastery_description}} <br>
+    <a href="{% url 'edit_mastery' mastery.id %}">Edit</a>
+{% endblock %} <br>

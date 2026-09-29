@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    Mastery_over_django!
-    <a href="{% url 'about' %}">About</a>
-</body>
-</html>
+
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>Mastery_over_django</h1><br>
+<a href="{% url 'masteries' %}">Check out my masteries!</a>
+<a href="{% url 'about' %}">About</a>
+{% endblock %}

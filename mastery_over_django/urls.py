@@ -31,4 +31,11 @@ urlpatterns = [
     path('insert_mastery', views.insert_mastery, name='insert_masteries'),
 
     path('<int:mastery_id>', views.mastery, name='mastery'),
+
+    path('<int:mastery_id>/edit', views.edit_mastery, name='edit_mastery'),
+
+    path('<int:mastery_id>/delete', views.delete_mastery, name='delete_mastery'),
+
+
+
 ]
