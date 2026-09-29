@@ -25,4 +25,9 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     path('about', views.about , name='about'),
+
+    path('masteries', views.masteries, name='masteries'),
+
+    path('insert_mastery', views.insert_mastery, name='insert_masteries')
+
 ]
