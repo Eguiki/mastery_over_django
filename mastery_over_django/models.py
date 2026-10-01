@@ -10,3 +10,13 @@ class Mastery(models.Model):
 
     def __str__(self):
         return self.mastery_name
+
+class Comment(models.Model):
+    fk_mastery = models.ForeignKey(Mastery, on_delete=models.CASCADE)
+    comment_text = models.CharField(max_length=200)
+    comment_votes = models.IntegerField(default=0)
+
+    def commentIsVerified(self):
+        if self.comment_votes > 10:
+            return True
+        return False
